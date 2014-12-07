@@ -1,0 +1,122 @@
+The Go Programming Language
+Intro
+9 Dec 2014
+Tags: go
+
+Martin Polden
+Yahoo!
+@mpolden
+
+* Bakgrunn og historie
+
+- Utvikling startet hos Google i 2007
+- Designet av Robert Griesemer, Rob Pike og Ken Thompson
+- Åpen kildekode i november 2009
+- Versjon 1.0 i mars 2012
+- Versjon 1.4 i løpet av desember 2014
+- Hører til C-familien
+- Inspirert av Pascal/Modula/Oberon, samt Newsqueak og Limbos implementasjon av CSP
+
+* Features
+
+- C-lignende syntax
+- Statisk typa
+- Minimalistisk syntax
+- Rask kompilering
+- Garbage collected
+
+* Features
+
+- Innebygd pakkehåndtering
+- Lettvektstråder: goroutines
+- Kommunikasjon via kanaler, inspirert av CSP
+- Kompilerer til statiske lenka binærer, uten avhengigheter
+- Innebygd tooling: bl.a formattering av kode, testing, testdekning, profiling, benchmarking
+- Stort standardbibliotek
+
+* Kode-eksempel: Hello, GDG!
+
+.play hello.go
+
+.image images/appenginegophercolor.jpg 300 _
+
+* Kode-eksempel: Webserver
+
+.play http_server.go
+
+* Designprinsipper
+
+- Stort fokus på redusert kompleksitet
+- Rask kompilering
+- Ryddig og konsis syntax, få keywords (Go: 25, C99: 37, Java: 50, C++11: 84)
+- Lettvekt typesystem
+- Minst mulig skriving (type inference), men fortsatt typesikkert
+- Ingen arv eller typehierarki
+- Skal være like enkelt å programmere i som et dynamisk typa språk
+- ..men med samme effektivitet som et statisk typa språk
+- Typesafe og memorysafe (GC)
+
+* Pakkesystem
+
+- Alt kompileres fra kildekode, inkludert eksterne pakker
+- Pakker distribueres via versjonskontroll, f.eks Git og Mercurial
+- Innebygd støtte for GitHub, BitBucket, code.google.com mm.
+- Eksplisitte avhengigheter
+- Ubrukte imports er kompileringsfeil
+
+ $ go get github.com/martinp/mypkg
+
+.code import_pkg.go
+
+* Eksempel på bygging
+
+ ~/p/nrk-spotify$ go get -d -v
+ github.com/cenkalti/backoff (download)
+ github.com/docopt/docopt-go (download)
+ github.com/golang/groupcache (download)
+ github.com/mitchellh/colorstring (download)
+ github.com/mreiferson/go-httpclient (download)
+
+ ~/p/nrk-spotify$ find . -name '*.go' -exec cat {} \; | wc -l
+    9345
+ 
+ ~/p/nrk-spotify$ time go build
+ go build  0.82s user 0.17s system 125% cpu 0.788 total
+
+* Testing
+
+.code add.go
+
+.code add_test.go
+
+* Goroutines og channels
+
+.play channels.go
+
+* Bruksområder
+
+- Designet for Google og systemutvikling i stor skala
+- Nettverksfokusert
+- Klient/server-model
+- Store cluster
+- Multi-core prosessorer
+
+* Brukere
+
+- Google: dl.google.com, YouTube
+- Docker
+- CoreOS: etcd, fleet, rocket
+- Canonical: juju
+- Heroku: doozer
+- CloudFlare
+- SoundCloud
+
+* Lenker
+- The Go Programming Language: [[https://youtube.com/watch?v=rKnDgT73v8s]]
+- Effective Go: [[https://golang.org/doc/effective_go.html]]
+- Organizing Go code: [[http://talks.golang.org/2014/organizeio.slide]]
+- Go at Google: [[https://talks.golang.org/2012/splash.article]]
+- [[http://learnxinyminutes.com/docs/go/]]
+- [[https://gobyexample.com]]
+
+Spørsmål?
