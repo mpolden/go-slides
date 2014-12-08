@@ -16,7 +16,7 @@ func main() {
 	for i := 0; i < 10; i++ {
 		select {
 		case msg1 := <-c1:
-			log.Println("ch1", msg1)
+			log.Println("c1", msg1)
 		}
 	}
 }

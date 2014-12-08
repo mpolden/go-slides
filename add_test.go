@@ -1,5 +1,5 @@
 // add_test.go
-package main
+package add
 
 import "testing"
 

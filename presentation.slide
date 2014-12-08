@@ -40,10 +40,6 @@ Yahoo!
 
 .image images/appenginegophercolor.jpg 300 _
 
-* Kode-eksempel: Webserver
-
-.play http_server.go
-
 * Designprinsipper
 
 - Stort fokus på redusert kompleksitet
@@ -52,9 +48,31 @@ Yahoo!
 - Lettvekt typesystem
 - Minst mulig skriving (type inference), men fortsatt typesikkert
 - Ingen arv eller typehierarki
+- Memorysafe (GC), ingen pointer aritmetikk
 - Skal være like enkelt å programmere i som et dynamisk typa språk
 - ..men med samme effektivitet som et statisk typa språk
-- Typesafe og memorysafe (GC)
+
+* Kode-eksempel: Webserver
+
+.play http_server.go
+
+* Kode-eksempel: Testing
+
+.code add.go
+
+.code add_test.go
+
+* Kode-eksempel: Interfaces
+
+.play if.go
+
+* Kode-eksempel: JSON (un)marshalling
+
+.play marshalling.go
+
+* Kode-eksempel: Goroutines og channels
+
+.play channels.go
 
 * Pakkesystem
 
@@ -83,16 +101,6 @@ Yahoo!
  ~/p/nrk-spotify$ time go build
  go build  0.82s user 0.17s system 125% cpu 0.788 total
 
-* Testing
-
-.code add.go
-
-.code add_test.go
-
-* Goroutines og channels
-
-.play channels.go
-
 * Bruksområder
 
 - Designet for Google og systemutvikling i stor skala
@@ -116,6 +124,7 @@ Yahoo!
 - Effective Go: [[https://golang.org/doc/effective_go.html]]
 - Organizing Go code: [[http://talks.golang.org/2014/organizeio.slide]]
 - Go at Google: [[https://talks.golang.org/2012/splash.article]]
+- Error handling in Go: [[http://blog.golang.org/error-handling-and-go]]
 - [[http://learnxinyminutes.com/docs/go/]]
 - [[https://gobyexample.com]]
 
